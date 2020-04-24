@@ -3,7 +3,11 @@ $error = '';
 if (isset($_POST['submit']) == 'Submit') {
     if ($_POST['email'] == '') {
         $error = "Please enter email";
-    } elseif ($_POST['psw'] == '') {
+    } elseif ($_POST['name'] == '') {
+        $error = "Please enter name";
+    } elseif ($_POST['mobile'] == '') {
+        $error = "Please enter mobile number";
+    }  elseif ($_POST['psw'] == '') {
         $error = "Please enter password";
     } else {
         $error = "successfully Submit form";
@@ -25,12 +29,17 @@ if (isset($_POST['submit']) == 'Submit') {
         <hr>
         <br/>
 
-        <input type="text" placeholder="Enter Email" name="email" >
+        <input type="text" placeholder="Enter Email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" name="email" >
+        <br/>
+        <br/>
+        <input type="text" placeholder="Enter name" name="name" value="<?php if(isset($_POST['name'])){echo $_POST['name'];} ?>">
+        <br/>
+        <br/>
+        <input type="text" placeholder="Enter mobile number" name="mobile" value="<?php if(isset($_POST['mobile'])){echo $_POST['mobile'];} ?>" >
         <br/>
         <br/>
 
-
-        <input type="text" placeholder="Enter Password" name="psw" >
+        <input type="text" placeholder="Enter Password" name="psw"  >
 
         <br/><br/>
 
