@@ -11,6 +11,7 @@ if (isset($_POST['submit']) == 'Submit') {
     print_r($_FILES);
     echo  "</pre>";
     echo $_FILE;
+    echo $_FILES['image']['name'];
     
     
     
@@ -49,8 +50,8 @@ if (isset($_POST['submit']) == 'Submit') {
         <p>Please fill in this form to create an account.</p>
         <hr>
         <br/>
-
-        <input type="hidden" placeholder="Enter Email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" name="email" >
+<input type="hidden"  value="<?php echo date('d-m-Y') ?>" name="date"  >
+        <input type="text" placeholder="Enter Email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>" name="email" >
         <br/>
         <br/>
         <input type="text" placeholder="Enter name" name="name" value="<?php if(isset($_POST['name'])){echo $_POST['name'];} ?>">
